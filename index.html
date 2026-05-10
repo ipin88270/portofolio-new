@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akbar Maulana Dwi Saputra | Portfolio</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: '#0a0a0a',
+            darker: '#121212',
+            cyanGlow: '#00e5ff',
+            neonBlue: '#0057ff',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Phosphor Icons (Alternative to Lucide) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#050505] text-gray-100 font-sans overflow-x-hidden selection:bg-cyanGlow/30">
+
+  <!-- Animated Gradient Background -->
+  <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-neonBlue/10 blur-[120px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-cyanGlow/10 blur-[120px]"></div>
+  </div>
+
+  <!-- Custom Cursor Glow -->
+  <div id="cursor-glow"
+    class="fixed w-[400px] h-[400px] rounded-full bg-cyanGlow/5 blur-[100px] pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out hidden md:block">
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
+      <a href="#home" class="text-xl font-bold tracking-tighter" data-aos="fade-right">
+        <span class="text-white">Akbar</span><span class="text-gradient"> Maulana</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8" data-aos="fade-down" data-aos-delay="100">
+        <a href="#home" class="text-sm font-medium text-gray-300 hover:text-cyanGlow transition-colors">Home</a>
+        <a href="#about" class="text-sm font-medium text-gray-300 hover:text-cyanGlow transition-colors">About</a>
+        <a href="#skills" class="text-sm font-medium text-gray-300 hover:text-cyanGlow transition-colors">Skills</a>
+        <a href="#experience"
+          class="text-sm font-medium text-gray-300 hover:text-cyanGlow transition-colors">Experience</a>
+        <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-cyanGlow transition-colors">Projects</a>
+        <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-cyanGlow transition-colors">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white" data-aos="fade-left">
+        <i class="ph ph-list text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/10 mt-4 px-6 py-8 flex-col gap-6 absolute left-0 right-0 top-full animate-fade-in shadow-2xl">
+      <a href="#home"
+        class="text-lg font-medium text-gray-300 hover:text-cyanGlow transition-colors mobile-link flex items-center gap-3">
+        <i class="ph ph-house text-cyanGlow"></i> Home
+      </a>
+      <a href="#about"
+        class="text-lg font-medium text-gray-300 hover:text-cyanGlow transition-colors mobile-link flex items-center gap-3">
+        <i class="ph ph-user text-cyanGlow"></i> About
+      </a>
+      <a href="#skills"
+        class="text-lg font-medium text-gray-300 hover:text-cyanGlow transition-colors mobile-link flex items-center gap-3">
+        <i class="ph ph-framer-logo text-cyanGlow"></i> Skills
+      </a>
+      <a href="#experience"
+        class="text-lg font-medium text-gray-300 hover:text-cyanGlow transition-colors mobile-link flex items-center gap-3">
+        <i class="ph ph-briefcase text-cyanGlow"></i> Experience
+      </a>
+      <a href="#projects"
+        class="text-lg font-medium text-gray-300 hover:text-cyanGlow transition-colors mobile-link flex items-center gap-3">
+        <i class="ph ph-code text-cyanGlow"></i> Projects
+      </a>
+      <a href="#contact"
+        class="text-lg font-medium text-gray-300 hover:text-cyanGlow transition-colors mobile-link flex items-center gap-3">
+        <i class="ph ph-paper-plane-tilt text-cyanGlow"></i> Contact
+      </a>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 pb-12 space-y-32">
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-[80vh] flex flex-col justify-center relative pt-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+          <div data-aos="fade-up"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-sm text-cyanGlow">
+            <span class="w-2 h-2 rounded-full bg-cyanGlow animate-pulse"></span>
+            Available for Hire
+          </div>
+
+          <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            Hi, I'm <br />
+            <span class="text-gradient">Akbar Maulana Dwi Saputra</span>
+          </h1>
+
+          <h2 data-aos="fade-up" data-aos-delay="200"
+            class="text-xl md:text-2xl text-gray-400 font-medium flex flex-wrap gap-3 items-center">
+            <i class="ph ph-terminal-window text-neonBlue text-2xl"></i> Junior Technical Support
+            <span class="text-gray-600">|</span>
+            <i class="ph ph-graph text-cyanGlow text-2xl"></i> Network Engineer
+            <span class="text-gray-600">|</span>
+            <i class="ph ph-shield-check text-neonBlue text-2xl"></i> Cyber Security
+          </h2>
+
+          <p data-aos="fade-up" data-aos-delay="300" class="text-gray-400 max-w-lg leading-relaxed text-lg">
+            Seorang siswa SMK Teknik Komputer dan Jaringan yang memiliki semangat tinggi dalam bidang jaringan komputer,
+            IoT, dan cyber security.
+          </p>
+
+          <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-4">
+            <a href="https://drive.google.com/file/d/1VrCZ8fCV5I49_QcJS4Qyx-a_ltSgXfsR/view?usp=sharing"
+              class="px-6 py-3 rounded-xl bg-neonBlue hover:bg-blue-600 text-white font-medium flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,87,255,0.4)]">
+              <i class="ph ph-download-simple text-xl"></i> Download CV
+            </a>
+            <a href="#contact"
+              class="px-6 py-3 rounded-xl glass hover:bg-white/10 text-white font-medium flex items-center gap-2 transition-all">
+              <i class="ph ph-paper-plane-tilt text-xl"></i> Contact Me
+            </a>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-delay="200" class="relative order-first lg:order-last">
+          <div class="w-64 h-64 md:w-80 md:h-80 lg:w-full lg:aspect-square max-w-md mx-auto relative">
+            <div class="absolute inset-0 rounded-full border border-white/10 animate-[spin_10s_linear_infinite]"></div>
+            <div
+              class="absolute inset-4 rounded-full border border-cyanGlow/30 border-dashed animate-[spin_15s_linear_infinite_reverse]">
+            </div>
+
+            <div
+              class="absolute inset-4 rounded-full overflow-hidden border-2 border-cyanGlow/30 shadow-[0_0_50px_rgba(0,229,255,0.15)] bg-gradient-to-br from-cyanGlow/10 via-transparent to-neonBlue/10 flex items-center justify-center backdrop-blur-sm">
+              <img src="akbar.png" alt="Akbar Maulana"
+                class="w-[95%] lg:w-[80%] h-auto object-contain hover:scale-110 transition-transform duration-500 relative z-10 translate-y-12 lg:-translate-y-2" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-gradient">Me</span></h2>
+        <div class="w-20 h-1 bg-neonBlue mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right" class="space-y-6 text-gray-300 text-lg leading-relaxed">
+          <p>Saya adalah pelajar <strong>SMKN 1 Boyolangu</strong> jurusan Teknik Komputer dan Jaringan. Saya memiliki
+            antusiasme yang kuat dalam mengeksplorasi bagaimana dunia digital terhubung.</p>
+          <p>Dengan pengalaman dalam konfigurasi jaringan, troubleshooting hardware, pengembangan IoT, dan dasar-dasar
+            cyber security, saya selalu mencari tantangan baru untuk mengasah skill saya.</p>
+          <p>Saya siap belajar, berkembang, dan berkontribusi di dunia IT profesional.</p>
+        </div>
+
+        <div data-aos="fade-left" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="glass-dark p-6 rounded-2xl border border-white/5 hover:border-cyanGlow/30 transition-colors">
+            <i class="ph ph-hard-drives text-cyanGlow text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold text-white mb-2">IT Infrastructure</h3>
+            <p class="text-sm text-gray-400">Server & Hardware</p>
+          </div>
+          <div class="glass-dark p-6 rounded-2xl border border-white/5 hover:border-cyanGlow/30 transition-colors">
+            <i class="ph ph-wifi-high text-neonBlue text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold text-white mb-2">Networking</h3>
+            <p class="text-sm text-gray-400">Routing & Switching</p>
+          </div>
+          <div
+            class="glass-dark p-6 rounded-2xl border border-white/5 hover:border-cyanGlow/30 transition-colors sm:col-span-2">
+            <i class="ph ph-code text-cyanGlow text-3xl mb-4"></i>
+            <h3 class="text-xl font-semibold text-white mb-2">IoT & Dev</h3>
+            <p class="text-sm text-gray-400">Smart Systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical <span class="text-gradient">Skills</span></h2>
+        <div class="w-20 h-1 bg-neonBlue mx-auto rounded-full"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-8" id="skills-container">
+        <!-- Injected via JS -->
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="text-gradient">Journey</span></h2>
+        <div class="w-20 h-1 bg-neonBlue mx-auto rounded-full"></div>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto" id="experience-container">
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 transform md:-translate-x-1/2"></div>
+        <!-- Injected via JS -->
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Licenses & <span class="text-gradient">Certifications</span>
+        </h2>
+        <div class="w-20 h-1 bg-neonBlue mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certificates-container">
+        <!-- Injected via JS -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="text-gradient">Projects</span></h2>
+        <div class="w-20 h-1 bg-neonBlue mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+        <!-- Injected via JS -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div data-aos="fade-up" class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-gradient">Touch</span></h2>
+        <div class="w-20 h-1 bg-neonBlue mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div data-aos="fade-right" class="space-y-8">
+          <h3 class="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+          <p class="text-gray-400 mb-8">Saya selalu terbuka untuk mendiskusikan peluang baru, proyek, atau sekadar
+            bertukar pikiran seputar teknologi.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-cyanGlow">
+                <i class="ph ph-envelope-simple text-xl"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amds090807@gmail.com" target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white hover:text-cyanGlow transition-colors font-medium flex items-center gap-1">amds090807@gmail.com
+                  <i class="ph ph-arrow-up-right text-xs"></i></a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-neonBlue">
+                <i class="ph ph-phone text-xl"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">WhatsApp</p>
+                <a href="https://wa.me/6285385570359" target="_blank" rel="noopener noreferrer"
+                  class="text-white hover:text-cyanGlow transition-colors font-medium flex items-center gap-1">
+                  +62 853-8557-0359 <i class="ph ph-arrow-up-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-cyanGlow">
+                <i class="ph ph-map-pin text-xl"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Location</p>
+                <a href="https://maps.app.goo.gl/SjmibH5XHo3aUrr78" target="_blank" rel="noopener noreferrer"
+                  class="text-white hover:text-cyanGlow transition-colors font-medium flex items-center gap-1">
+                  Tulungagung, Jawa Timur <i class="ph ph-arrow-up-right text-xs"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" class="glass-dark p-8 rounded-2xl border border-white/5">
+          <form class="space-y-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-400">Name</label>
+                <input type="text" id="contact-name"
+                  class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyanGlow transition-colors"
+                  placeholder="John Doe">
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-medium text-gray-400">Email</label>
+                <input type="email" id="contact-email"
+                  class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyanGlow transition-colors"
+                  placeholder="john@example.com">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-gray-400">Subject</label>
+              <input type="text" id="contact-subject"
+                class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyanGlow transition-colors"
+                placeholder="Project Inquiry">
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-gray-400">Message</label>
+              <textarea rows="4" id="contact-message"
+                class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyanGlow transition-colors resize-none"
+                placeholder="Hello Akbar..."></textarea>
+            </div>
+
+            <button type="button" id="send-email-btn"
+              class="w-full py-4 rounded-xl bg-gradient-to-r from-neonBlue to-cyanGlow text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+              <i class="ph ph-envelope-simple text-xl"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 glass-dark mt-20 relative">
+    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+
+      <div class="text-center md:text-left">
+        <h2 class="text-2xl font-bold tracking-tighter mb-2">
+          <span class="text-white">Akbar</span><span class="text-gradient"> Maulana</span>
+        </h2>
+        <p class="text-gray-500 text-sm">Junior Technical Support & Network Engineer</p>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="https://github.com/ipin88270"
+          class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-cyanGlow hover:border-cyanGlow/50 transition-all">
+          <i class="ph ph-github-logo text-xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/akbar-maulana-5b5b16375/"
+          class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-cyanGlow hover:border-cyanGlow/50 transition-all">
+          <i class="ph ph-linkedin-logo text-xl"></i>
+        </a>
+        <a href="https://www.instagram.com/amaullnaa7/"
+          class="w-10 h-10 rounded-full glass flex items-center justify-center text-gray-400 hover:text-cyanGlow hover:border-cyanGlow/50 transition-all">
+          <i class="ph ph-instagram-logo text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 py-6">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-500" id="copyright-year">
+          &copy; 2026 Akbar Maulana Dwi Saputra. All rights reserved.
+        </p>
+        <p class="text-sm text-gray-500 flex items-center gap-1">
+          Built with <span class="text-red-500"></span> by Akbar Maulana
+        </p>
+      </div>
+    </div>
+
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})"
+      class="absolute -top-6 right-8 w-12 h-12 rounded-full bg-neonBlue text-white flex items-center justify-center hover:bg-blue-600 transition-colors shadow-[0_0_20px_rgba(0,87,255,0.4)]">
+      <i class="ph ph-arrow-up text-2xl"></i>
+    </button>
+  </footer>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
